@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+:root {
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+  --body-font: "Poppins", sans-serif;
+  --h1-font-size: 1.75rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.813rem;
+  --font-medium: 500;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,input,button {
+  font-size: var(--normal-font-size);
+  font-family: var(--body-font);
+}
+
+body {
+  color: var(--white-color);
+  background: #121212;
+}
+
+input,button {
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/login.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+
+.loginForm {
+  position: relative;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--white-color);
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(8px);
+  width: 90%;
+  max-width: 400px;
+}
+
+.loginTitle {
+  text-align: center;
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: 1.5rem;
+}
+
+.loginContent {
+  display: grid;
+  row-gap: 1.5rem;
+}
+.loginBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.loginIcon,
+.login__eye {
+  font-size: 1.25rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.loginInput {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  color: var(--white-color);
+  position: relative;
+}
+
+.loginLabel {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--small-font-size);
+  transition: 0.3s;
+  color: var(--white-color);
+  background: rgba(255, 255, 255, );
+  padding: 0 5px;
+}
+
+.login__eye {
+  margin-left: auto;
+}
+
+.loginInput:focus + .loginLabel,
+.loginInput:not(:placeholder-shown) + .loginLabel {
+  top: -10px;
+  font-size: var(--small-font-size);
+  padding: 0;
+}
+
+/* Checkboxes & Links */
+.login__check {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.login__check-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.login__forgot {
+  color: var(--white-color);
+  font-size: var(--small-font-size);
+}
+
+.login__forgot:hover {
+  text-decoration: underline;
+}
+
+/* Buttons */
+.loginButton {
+  width: 100%;
+  padding: 12px;
+  border-radius: 5px;
+  background: var(--white-color);
+  color: var(--black-color);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.loginButton:hover {
+  background: #f1f1f1;
+}
+
+/* Register Link */
+.loginRegister {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.loginRegister a {
+  color: var(--white-color);
+  font-weight: var(--font-medium);
+}
+
+.loginRegister a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (min-width: 576px) {
+  .loginForm {
+    padding: 3rem;
+    border-radius: 1.5rem;
+  }
+  
+  .loginTitle {
+    font-size: 2rem;
+  }
+}
+/* Remember Me checkbox container */
+.loginOptions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Custom styling for checkbox */
+.loginRemember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Hide default checkbox and apply custom styling */
+.loginRemember input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #333;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Custom checkmark when checked */
+.loginRemember input[type="checkbox"]:checked {
+  background-color: #333;
+}
+
+.loginRemember input[type="checkbox"]:checked::after {
+  content: "✔";
+  position: absolute;
+  top: 0;
+  left: 4px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
